@@ -1,6 +1,7 @@
 package com.ejemplo.tiendaalamano.model.shared;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class ClienteCrearDto implements Serializable{
     
@@ -11,7 +12,7 @@ public class ClienteCrearDto implements Serializable{
     private String pass;
     private String nombre;
     private String documento;
-    private List <DireccionesRestModel> direccionesrestModels;
+    private List <DireccionesDto> direccionesDto;
     private String telefono;
     public String getIdCliente() {
         return idCliente;
@@ -43,11 +44,11 @@ public class ClienteCrearDto implements Serializable{
     public void setDocumento(String documento) {
         this.documento = documento;
     }
-    public List<DireccionesRestModel> getDireccionesrestModels() {
-        return direccionesrestModels;
+    public List<DireccionesDto> getDireccionesDto() {
+        return direccionesDto;
     }
-    public void setDireccionesrestModels(List<DireccionesRestModel> direccionesrestModels) {
-        this.direccionesrestModels = direccionesrestModels;
+    public void setDireccionesrestModels(List<DireccionesDto> direccionesDto) {
+        this.direccionesDto = direccionesDto;
     }
     public String getTelefono() {
         return telefono;
