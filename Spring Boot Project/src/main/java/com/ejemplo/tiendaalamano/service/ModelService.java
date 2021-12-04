@@ -2,7 +2,7 @@ package com.ejemplo.tiendaalamano.service;
 
 import java.util.List;
 
-import com.ejemplo.tiendaalamano.model.Model;
+import com.ejemplo.tiendaalamano.data.entities.Model;
 
 public interface ModelService {
     void deleteAllModels();
