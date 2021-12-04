@@ -8,7 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="Forma de Pago")
+@Entity(name="formapago")
 
 public class formaDePagoEntity implements Serializable{
     private static final long serialVersionUID = 1L;

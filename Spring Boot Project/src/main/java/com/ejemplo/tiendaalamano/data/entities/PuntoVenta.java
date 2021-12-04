@@ -8,10 +8,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-@Entity(name="Punto de Venta")
+@Entity(name="puntoventa")
 
-
-public class puntoDeVentaEntity implements Serializable {
+public class PuntoVenta implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
