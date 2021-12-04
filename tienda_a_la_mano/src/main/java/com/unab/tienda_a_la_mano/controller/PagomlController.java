@@ -19,31 +19,31 @@ import com.mercadopago.resources.datastructures.preference.Item;
 @RestController
 @RequestMapping("api/pagoml")
 public class PagomlController {
-	
+
 	@GetMapping("/crear")
 	public String crear() throws MPException {
-        //MercadoPago.SDK.setAccessToken("TEST-4977301227552893-120321-305b468b58c465aeaf71683ea9f0460f-24092619");
+		//MercadoPago.SDK.setAccessToken("TEST-4977301227552893-120321-305b468b58c465aeaf71683ea9f0460f-24092619");
 		MercadoPago.SDK.setAccessToken("APP_USR-4977301227552893-120321-7fe4e17eb7326410bc0fe09eabe05f1e-24092619");
 		Preference preferencia = new Preference();
-	
-			preferencia.setBackUrls(
-	           new BackUrls().setFailure("http://localhost:8080/failure")
-	           .setPending("http://localhost:8080/pending")
-	           .setSuccess("http://localhost:8080/success")
-	        );
 
-	        Item item = new Item();
-	        item.setTitle("Test Item")
-	                .setQuantity(1)
-	                .setUnitPrice((float) 7500);
-	        preferencia.appendItem(item);
+		preferencia.setBackUrls(
+				new BackUrls().setFailure("http://localhost:8080/failure")
+				.setPending("http://localhost:8080/pending")
+				.setSuccess("http://localhost:8080/success")
+				);
 
-	        var result = preferencia.save();
+		Item item = new Item();
+		item.setTitle("PAGO DEL MERCADO")
+		.setQuantity(1)
+		.setUnitPrice((float) 7500);
+		preferencia.appendItem(item);
 
-	        System.out.println(result.getSandboxInitPoint());
-	        
-		
-		
+		var result = preferencia.save();
+
+		System.out.println(result.getSandboxInitPoint());
+
+
+
 		return "redirect:"+result.getSandboxInitPoint() ;
 	}
 
