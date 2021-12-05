@@ -1,0 +1,360 @@
+{
+	"info": {
+		"_postman_id": "a24b8c0d-0f16-420c-bd0b-c97149702367",
+		"name": "Administrador",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "49-Cambiar el estado a los productos",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDA0MDksImV4cCI6MTYzODc0MTAwOX0.342md0Vl8LE_1UNLMh5m_ogIl-LTV3ElqJx0svihklrP-NyU08o30cS2FeApcJakmYDCa9Y51-X2MWfZLA1Ylg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_producto\": 1,\r\n    \"nombre\": \"Computador Editado\",\r\n    \"valor\": 850.0,\r\n    \"estado\": \"Disponible\",\r\n    \"inventario\": 14,\r\n    \"marcaModel\": {\r\n        \"id_marca\": 1,\r\n        \"nombre\": \"Disponible\",\r\n        \"estado\": \"Disponible\"\r\n    },\r\n    \"categoriaModel\": {\r\n        \"id_categoria\": 1,\r\n        \"nombre\": \"Televisores\",\r\n        \"estado\": \"disponible\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/actualizar",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"actualizar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "48-Cambios en los productos",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDA0MDksImV4cCI6MTYzODc0MTAwOX0.342md0Vl8LE_1UNLMh5m_ogIl-LTV3ElqJx0svihklrP-NyU08o30cS2FeApcJakmYDCa9Y51-X2MWfZLA1Ylg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id_producto\": 3,\r\n    \"nombre\": \"Televisor\",\r\n    \"valor\": 553.0,\r\n    \"estado\": \"No Disponible\",\r\n    \"inventario\": 25,\r\n    \"marcaModel\": {\r\n        \"id_marca\": 1,\r\n        \"nombre\": \"Disponible\",\r\n        \"estado\": \"Disponible\"\r\n    },\r\n    \"categoriaModel\": {\r\n        \"id_categoria\": 2,\r\n        \"nombre\": \"Disponible\",\r\n        \"estado\": \"No Disponible\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/sinexistencias/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"sinexistencias",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "55-Productos en cero",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDE5MzcsImV4cCI6MTYzODc0MjUzN30.nROCjNfP7-zdRQVJ8VtCPGbDuMKC1_Y-whOcOXTVaJUdPhGkbmzaZWgr4VeTjl1mhw7E12EKiCyiKSTAAgDAhg",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/sinexistencias/0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"sinexistencias",
+						"0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "62-Registrar Categorias",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDIyODQsImV4cCI6MTYzODc0Mjg4NH0.d7d4gwXTTRQO256NT4W3qmtMrkwMbQfghtfPCQ6X6-Pv2bMkrymV6NbYpMH8ouHkaYcLI69ezvYDTgKSfPqkGA",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\":\"Disponible\",\r\n    \"nombre\":\"Tecnologia\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/categorias/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"categorias",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "63- Registrar Marcas",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDI0OTYsImV4cCI6MTYzODc0MzA5Nn0.aAfmvXDcxcwtqph0VN5QNZLiyMV1xqLjcamiWMco5Z75XHucxj4f_LuLumKlPzWV_xkHbn5bVQGgwzfCOpH_Ug",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"estado\":\"Disponible\",\r\n    \"nombre\":\"Dell\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/marca/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"marca",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "65-Eliminar Categorias",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDI3NzMsImV4cCI6MTYzODc0MzM3M30.7Ll5xHYpYZGBIHMj_R7kClZW_ak-z5U4mi16OtXw3SS-iJQFEnGcEW6Jbm3qvdFgnQUZcH1-QCMuVm0wNxoD9g",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/categorias/borrar/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"categorias",
+						"borrar",
+						"3"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "66-Eliminar Marcas",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDI5MzAsImV4cCI6MTYzODc0MzUzMH0.yXupwhxBcSChLVVa6Vf9l3h66HZeMHeC6rs4vjjcYfDtdwiQtH62EFZFHyyxBYmWoy23TuYL30parSnlG1USfQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/marca/borrar/4?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"marca",
+						"borrar",
+						"4"
+					],
+					"query": [
+						{
+							"key": null,
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "67-Eliminar Productos",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDI5MzAsImV4cCI6MTYzODc0MzUzMH0.yXupwhxBcSChLVVa6Vf9l3h66HZeMHeC6rs4vjjcYfDtdwiQtH62EFZFHyyxBYmWoy23TuYL30parSnlG1USfQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/borrar/5?=",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"borrar",
+						"5"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "71-72-Registrar Puntos de Venta",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3NDQ0MjgsImV4cCI6MTYzODc0NTAyOH0.JgAyPJFjDjX4nSVmyjVf1SpjQty4FEgxmTVU-MzfbJ_rdIWEMy29r-MzBhtbKoI9F3y3SUQ4MN17TFWAxwMz5A",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nombrePuntoDeVenta\":\"SEDE ENVIGADO\",\r\n    \"ciudad\":\"MEDELLIN\",\r\n    \"ubicacion\":\"6.193518354582868, -75.56641217162075\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/puntoventa/nuevo",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"puntoventa",
+						"nuevo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "73- Consultar Ubicacion por ciudad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/tiendaalamano/api/auth",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

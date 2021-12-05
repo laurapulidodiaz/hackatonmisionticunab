@@ -1,6 +1,6 @@
 package com.ejemplo.tiendaalamano.controller;
 
-import com.ejemplo.tiendaalamano.model.Model;
+import com.ejemplo.tiendaalamano.data.entities.Model;
 import com.ejemplo.tiendaalamano.service.ModelService;
 
 import java.util.List;

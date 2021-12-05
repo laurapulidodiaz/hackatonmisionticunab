@@ -1,4 +1,4 @@
-package com.ejemplo.tiendaalamano.model;
+package com.ejemplo.tiendaalamano.data.entities;
 
 import java.io.Serializable;
 

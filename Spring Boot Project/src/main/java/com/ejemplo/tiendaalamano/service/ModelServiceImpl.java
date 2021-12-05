@@ -1,7 +1,7 @@
 package com.ejemplo.tiendaalamano.service;
 
-import com.ejemplo.tiendaalamano.model.Model;
 import com.ejemplo.tiendaalamano.repository.ModelRepository;
+import com.ejemplo.tiendaalamano.data.entities.Model;
 import com.ejemplo.tiendaalamano.exception.BadResourceRequestException;
 import com.ejemplo.tiendaalamano.exception.NoSuchResourceFoundException;
 
