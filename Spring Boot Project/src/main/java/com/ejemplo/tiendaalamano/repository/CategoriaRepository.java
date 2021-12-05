@@ -19,4 +19,7 @@ public interface CategoriaRepository extends JpaRepository<CategoriaEntity, Inte
     @Query("DELETE FROM CategoriaEntity c WHERE c.idCategoria=:codigo")
     public Void borrarOne(Integer codigo);
 
+    /*@Query("UPDATE * FROM CategoriaEntity c WHERE c.idCategoria=:codigo")
+    public Void actualizar(CategoriaEntity miObjeto, Integer codigo);*/
+
 }

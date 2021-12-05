@@ -29,4 +29,8 @@ public class CategoriaServiceImpl {
         categoRepo.deleteById(codigo);
     }
 
+    /*public void actualizarCategoria(CategoriaEntity miObjeto, Integer codigo){
+        categoRepo.actualizar(miObjeto, codigo);
+    }*/
+
 }
