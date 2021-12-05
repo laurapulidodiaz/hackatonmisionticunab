@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "a3c8fdd9-047e-4491-9ee7-caa7ab69fe95",
+		"name": "Cliente",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1-Buscar Producto",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3MzU3NjMsImV4cCI6MTYzODczNjM2M30.h8EMY9178wJYXu9_-GYc_FNQHyMQwyyMutLpJkf8_57UKiDXulNuZUNTSbhLZe05z3WV7i3t7Mui5UTuc0q26g",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/una/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"una",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "8-Categorias Disponibles",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3Mzg2NTQsImV4cCI6MTYzODczOTI1NH0.N2hhr_2uaXdKg_ZicNO6lgqM1gLtVKv9xzcEWMNgZP-FcsT_Rhv43bCtIdVBov58L9AzRG35BRJy42ElQcC0pw",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/estcate/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"estcate",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "21-Pedidos con estado",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJqdGkiOiJzb2Z0dGVrSldUIiwic3ViIjoidGV4dG8gZWplbXBsbyIsImF1dGhvcml0aWVzIjpbIlJPTEVfVVNFUiJdLCJpYXQiOjE2Mzg3Mzk1MTksImV4cCI6MTYzODc0MDExOX0._ggqsEb4ubM-TMiNiLSNAmuqWKwRyqxkzfYoFD-mnnU5UEKZFoasSIAXaauzMl2_uV61xSAFT4uLT_u0vhxdWQ",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/tiendaalamano/api/producto/todas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"tiendaalamano",
+						"api",
+						"producto",
+						"todas"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

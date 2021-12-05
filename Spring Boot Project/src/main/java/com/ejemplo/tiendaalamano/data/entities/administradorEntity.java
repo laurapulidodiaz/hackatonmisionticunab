@@ -8,40 +8,42 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name = "administrador")
+@Entity
+@Table(name = "administrador")
 public class AdministradorEntity implements Serializable {
     private static final long serialVersionUID=1L;
 
     @Id
-    @Column
+    @Column(name="id_administrador")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idAdministrador;
+    private Integer id_administrador;
 
-    @Column(nullable = false, length = 15)
+    @Column(name="username")
     private String username;
 
-    @Column(nullable = false, length = 15)
+    @Column(name="pass")
     private String pass;
 
-    @Column(nullable = false, length = 50)
+    @Column(name="nombre")
     private String nombre;
 
-    @Column(nullable = false, length = 15)
+    @Column(name="documento")
     private String documento;
 
-    @Column(nullable = false)
-    private int idDireccion;
+    @Column(name="id_direccion")
+    private int id_direccion;
 
-    @Column(nullable = false, length = 15)
+    @Column(name="telefono")
     private String telefono;
 
-    public long getIdAdministrador() {
-        return idAdministrador;
+    public Integer getId_administrador() {
+        return id_administrador;
     }
 
-    public void setIdAdministrador(long idAdministrador) {
-        this.idAdministrador = idAdministrador;
+    public void setId_administrador(Integer id_administrador) {
+        this.id_administrador = id_administrador;
     }
 
     public String getUsername() {
@@ -76,12 +78,12 @@ public class AdministradorEntity implements Serializable {
         this.documento = documento;
     }
 
-    public int getIdDireccion() {
-        return idDireccion;
+    public int getId_direccion() {
+        return id_direccion;
     }
 
-    public void setIdDireccion(int idDireccion) {
-        this.idDireccion = idDireccion;
+    public void setId_direccion(int id_direccion) {
+        this.id_direccion = id_direccion;
     }
 
     public String getTelefono() {
