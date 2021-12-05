@@ -22,18 +22,18 @@ public class ComentarioEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "comentario",  length = 40, nullable = false)
+	@Column(name = "comentario",  length = 40, nullable = true)
 	private String comentario;
 	
-	@Column(name = "fecha", nullable = false)
+	@Column(name = "fecha", nullable = true)
 	private Date fecha;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "producto_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "producto_id", referencedColumnName = "id", nullable = true)
 	private ProductoEntity producto;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = true)
 	private ClienteEntity cliente;
 
 	public Long getId() {

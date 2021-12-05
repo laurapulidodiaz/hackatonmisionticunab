@@ -22,20 +22,20 @@ public class PromocionEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "tipo",  length = 40, nullable = false)
+	@Column(name = "tipo",  length = 40, nullable = true)
 	private String tipo;
 	
-	@Column(name = "valor", nullable = false)
+	@Column(name = "valor", nullable = true)
 	private Double valor;
 	
-	@Column(name = "fecha_inicial", nullable = false)
+	@Column(name = "fecha_inicial", nullable = true)
 	private Date fecha_inicial;
 	
-	@Column(name = "fecha_final", nullable = false)
+	@Column(name = "fecha_final", nullable = true)
 	private Date fecha_final;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "producto_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "producto_id", referencedColumnName = "id", nullable = true)
 	private ProductoEntity producto;
 
 	public Long getId() {

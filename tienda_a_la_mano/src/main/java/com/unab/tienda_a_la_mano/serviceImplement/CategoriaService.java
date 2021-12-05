@@ -22,6 +22,11 @@ public class CategoriaService implements ICategoriaService{
 	}
 
 	@Override
+	public List<CategoriaEntity> allActivos() {
+		return this.repository.allActivos();
+	}
+	
+	@Override
 	public Optional<CategoriaEntity> findById(Long id) {
 		return this.repository.findById(id);
 	}

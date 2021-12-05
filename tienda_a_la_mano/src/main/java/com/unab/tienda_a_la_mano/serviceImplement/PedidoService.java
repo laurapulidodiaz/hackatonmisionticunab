@@ -10,9 +10,9 @@ import com.unab.tienda_a_la_mano.entity.PedidoEntity;
 import com.unab.tienda_a_la_mano.repository.IPedidoRepository;
 import com.unab.tienda_a_la_mano.service.IPedidoService;
 
-
 @Service
 public class PedidoService implements IPedidoService{
+	
 	@Autowired
 	private IPedidoRepository repository;
 

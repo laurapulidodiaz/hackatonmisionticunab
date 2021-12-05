@@ -18,7 +18,7 @@ public class RolEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "descripcion",  length = 40, nullable = false)
+	@Column(name = "descripcion",  length = 40, nullable = true)
 	private String descripcion;
 
 	public Long getId() {

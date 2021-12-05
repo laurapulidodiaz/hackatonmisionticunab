@@ -18,7 +18,7 @@ public class CiudadEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre",  length = 40, nullable = false)
+	@Column(name = "nombre",  length = 40, nullable = true)
 	private String nombre;
 
 	public Long getId() {

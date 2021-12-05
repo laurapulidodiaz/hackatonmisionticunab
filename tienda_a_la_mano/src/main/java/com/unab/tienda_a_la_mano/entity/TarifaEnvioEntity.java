@@ -17,22 +17,22 @@ public class TarifaEnvioEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "descripcion",  length = 40, nullable = false)
+	@Column(name = "descripcion",  length = 40, nullable = true)
 	private String descripcion;
 	
-	@Column(name = "valor", nullable = false)
+	@Column(name = "valor", nullable = true)
 	private Double valor;
 	
-	@Column(name = "cant_min", nullable = false)
+	@Column(name = "cant_min", nullable = true)
 	private Double cant_min;
 	
-	@Column(name = "cant_max", nullable = false)
+	@Column(name = "cant_max", nullable = true)
 	private Double cant_max;
 	
-	@Column(name = "precio_min", nullable = false)
+	@Column(name = "precio_min", nullable = true)
 	private Double precio_min;
 	
-	@Column(name = "precio_max", nullable = false)
+	@Column(name = "precio_max", nullable = true)
 	private Double precio_max;
 
 	public Long getId() {

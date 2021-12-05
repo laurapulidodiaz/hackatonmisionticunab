@@ -21,29 +21,29 @@ public class TiendaEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre",  length = 40, nullable = false)
+	@Column(name = "nombre",  length = 40, nullable = true)
 	private String nombre;
 	
-	@Column(name = "direccion",  length = 40, nullable = false)
+	@Column(name = "direccion",  length = 40, nullable = true)
 	private String direccion;
 	
-	@Column(name = "telefono",  length = 40, nullable = false)
+	@Column(name = "telefono",  length = 40, nullable = true)
 	private String telefono;
 	
-	@Column(name = "coordenadas",  length = 40, nullable = false)
+	@Column(name = "coordenadas",  length = 40, nullable = true)
 	private String coordenadas;
 	
-	@Column(name = "facebook",  length = 40, nullable = false)
+	@Column(name = "facebook",  length = 40, nullable = true)
 	private String facebook;
 	
-	@Column(name = "twitter",  length = 40, nullable = false)
+	@Column(name = "twitter",  length = 40, nullable = true)
 	private String twitter;
 	
-	@Column(name = "instagram",  length = 40, nullable = false)
+	@Column(name = "instagram",  length = 40, nullable = true)
 	private String instagram;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "ciudad_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ciudad_id", referencedColumnName = "id", nullable = true)
 	private CiudadEntity ciudad;
 
 	public Long getId() {

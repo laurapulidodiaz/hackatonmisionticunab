@@ -6,14 +6,16 @@ import java.util.Optional;
 import com.unab.tienda_a_la_mano.entity.ProductoEntity;
 
 
-public interface IProductoService {
-	
+public interface IProductoService {	
 	
 	//Listar todos
 	public List<ProductoEntity> all();
 	
 	//Listar por ID
 	public Optional<ProductoEntity> findById(Long id);
+	
+	//Listar por Por nombre o marca
+	public List<ProductoEntity> buscar(String filtro);
 	
 	//Guardar-actualizar
 	public ProductoEntity save(ProductoEntity productoEntity);	

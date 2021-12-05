@@ -22,14 +22,17 @@ public class PqrsdEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "comentario",  length = 40, nullable = false)
+	@Column(name = "comentario",  length = 40, nullable = true)
 	private String comentario;
 	
-	@Column(name = "fecha", nullable = false)
+	@Column(name = "tipo",  length = 40, nullable = true)
+	private String tipo;
+	
+	@Column(name = "fecha", nullable = true)
 	private Date fecha;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "pedido_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "pedido_id", referencedColumnName = "id", nullable = true)
 	private PedidoEntity pedido;
 
 	public Long getId() {
@@ -46,6 +49,14 @@ public class PqrsdEntity implements Serializable{
 
 	public void setComentario(String comentario) {
 		this.comentario = comentario;
+	}
+	
+	public String getTipo() {
+		return tipo;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
 	}
 
 	public Date getFecha() {

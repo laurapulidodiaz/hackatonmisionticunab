@@ -18,10 +18,10 @@ public class MedioPagoEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "descripcion",  length = 40, nullable = false)
+	@Column(name = "descripcion",  length = 40, nullable = true)
 	private String descripcion;
 	
-	@Column(name = "estado",  length = 40, nullable = false)
+	@Column(name = "estado",  length = 40, nullable = true)
 	private String estado;
 
 	public Long getId() {

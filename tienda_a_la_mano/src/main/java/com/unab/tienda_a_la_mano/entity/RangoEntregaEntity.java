@@ -18,11 +18,8 @@ public class RangoEntregaEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre",  length = 40, nullable = false)
+	@Column(name = "nombre",  length = 40, nullable = true)
 	private String nombre;
-	
-	@Column(name = "telefono",  length = 40, nullable = false)
-	private String telefono;
 
 	public Long getId() {
 		return id;
@@ -39,17 +36,6 @@ public class RangoEntregaEntity implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public String getTelefono() {
-		return telefono;
-	}
-
-	public void setTelefono(String telefono) {
-		this.telefono = telefono;
-	}
-
-	
-	
 	
 	
 

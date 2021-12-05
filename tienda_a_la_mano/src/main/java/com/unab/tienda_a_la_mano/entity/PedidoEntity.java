@@ -22,54 +22,57 @@ public class PedidoEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "precio", nullable = false)
+	@Column(name = "fecha", nullable = true)
 	private Date fecha;
 	
-	@Column(name = "costo_envio", nullable = false)
+	@Column(name = "costo_envio", nullable = true)
 	private Double costo_envio;
 	
-	@Column(name = "pago_entrega", nullable = false)
+	@Column(name = "pago_entrega", nullable = true)
 	private Double pago_entrega;
 	
-	@Column(name = "total_pedido", nullable = false)
+	@Column(name = "total_pedido", nullable = true)
 	private Double total_pedido;
 	
-	@Column(name = "total_impuesto", nullable = false)
+	@Column(name = "total_impuesto", nullable = true)
 	private Double total_impuesto;
 	
-	@Column(name = "total_descuento", nullable = false)
+	@Column(name = "total_descuento", nullable = true)
 	private Double total_descuento;
 	
-	@Column(name = "estado",  length = 40, nullable = false)
+	@Column(name = "estado",  length = 40, nullable = true)
 	private String estado;
 	
-	@Column(name = "observacion",  length = 40, nullable = false)
+	@Column(name = "observacion",  length = 40, nullable = true)
 	private String observacion;
 	
-	@Column(name = "calificacion", nullable = false)
+	@Column(name = "calificacion", nullable = true)
 	private Double calificacion;
 	
-	@Column(name = "tipo_entrega",  length = 40, nullable = false)
+	@Column(name = "tipo_entrega",  length = 40, nullable = true)
 	private String tipo_entrega;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = false)
+	@Column(name = "hora_entrega",  length = 40, nullable = true)
+	private String hora_entrega;
+
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "cliente_id", referencedColumnName = "id", nullable = true)
 	private ClienteEntity cliente;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "tienda_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "tienda_id", referencedColumnName = "id", nullable = true)
 	private TiendaEntity tienda;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "domiciliario_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "domiciliario_id", referencedColumnName = "id", nullable = true)
 	private DomiciliarioEntity domiciliario;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "rango_entrega_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "rango_entrega_id", referencedColumnName = "id", nullable = true)
 	private RangoEntregaEntity rango_entrega;
 
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "tarifa_envio_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "tarifa_envio_id", referencedColumnName = "id", nullable = true)
 	private TarifaEnvioEntity tarifa_envio;
 
 	public Long getId() {
@@ -200,7 +203,13 @@ public class PedidoEntity implements Serializable{
 		this.tarifa_envio = tarifa_envio;
 	}
 	
-	
+	public String getHora_entrega() {
+		return hora_entrega;
+	}
+
+	public void setHora_entrega(String hora_entrega) {
+		this.hora_entrega = hora_entrega;
+	}
 	
 	
 

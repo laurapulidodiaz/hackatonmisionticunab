@@ -22,27 +22,30 @@ public class ProductoEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre",  length = 40, nullable = false)
+	@Column(name = "nombre",  length = 40, nullable = true)
 	private String nombre;
 
-	@Column(name = "precio", nullable = false)
+	@Column(name = "precio", nullable = true)
 	private Double precio;
 	
-	@Column(name = "cant_min", nullable = false)
+	@Column(name = "impuesto", nullable = true)
+	private Double impuesto;
+	
+	@Column(name = "cant_min", nullable = true)
 	private Double cant_min;
 	
-	@Column(name = "puntos", nullable = false)
+	@Column(name = "puntos", nullable = true)
 	private Double puntos;
 	
-	@Column(name = "stock", nullable = false)
+	@Column(name = "stock", nullable = true)
 	private Double stock;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "categoria_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "categoria_id", referencedColumnName = "id", nullable = true)
 	private CategoriaEntity categoria;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "marca_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "marca_id", referencedColumnName = "id", nullable = true)
 	private MarcaEntity marca;
 
 	public Long getId() {
@@ -67,6 +70,16 @@ public class ProductoEntity implements Serializable{
 
 	public void setPrecio(Double precio) {
 		this.precio = precio;
+	}
+	
+	
+
+	public Double getImpuesto() {
+		return impuesto;
+	}
+
+	public void setImpuesto(Double impuesto) {
+		this.impuesto = impuesto;
 	}
 
 	public Double getCant_min() {

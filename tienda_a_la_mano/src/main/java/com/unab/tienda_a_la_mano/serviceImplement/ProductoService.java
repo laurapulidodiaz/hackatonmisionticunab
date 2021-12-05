@@ -20,11 +20,17 @@ public class ProductoService implements IProductoService{
 	public List<ProductoEntity> all() {
 		return this.repository.findAll();
 	}
+	
+	@Override
+	public List<ProductoEntity> buscar(String filtro) {
+		return this.repository.buscar(filtro);
+	}
 
 	@Override
 	public Optional<ProductoEntity> findById(Long id) {
 		return this.repository.findById(id);
 	}
+
 
 	@Override
 	public ProductoEntity save(ProductoEntity productoEntity) {

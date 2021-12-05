@@ -35,6 +35,13 @@ public class CategoriaController {
 		return service.all();
 	}
 	
+	//Con el metodo GET sin parametros consultamos todos los registros
+	@GetMapping("/disponibles")
+	public List<CategoriaEntity> hola(){
+		return service.allActivos();
+	}
+	
+	
 	//Con el metodo GET con parametros consultamos los registros por ID
 	@GetMapping("{id}")
 	public Optional<CategoriaEntity> show(@PathVariable Long id){

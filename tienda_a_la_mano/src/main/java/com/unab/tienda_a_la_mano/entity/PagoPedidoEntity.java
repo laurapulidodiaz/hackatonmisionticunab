@@ -21,15 +21,15 @@ public class PagoPedidoEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "valor_pago", nullable = false)
+	@Column(name = "valor_pago", nullable = true)
 	private Double valor_pago;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "medio_pago_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "medio_pago_id", referencedColumnName = "id", nullable = true)
 	private MedioPagoEntity medio_pago;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "pedido_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER )
+	@JoinColumn(name = "pedido_id", referencedColumnName = "id", nullable = true)
 	private PedidoEntity pedido;
 
 	public Long getId() {

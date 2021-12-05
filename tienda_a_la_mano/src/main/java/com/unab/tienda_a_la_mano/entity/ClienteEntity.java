@@ -21,58 +21,48 @@ public class ClienteEntity implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "nombre",  length = 40, nullable = false)
+	@Column(name = "nombre",  length = 40, nullable = true)
 	private String nombre;
 	
-	@Column(name = "direccion",  length = 40, nullable = false)
-	private String direccion;
-	
-	@Column(name = "telefono",  length = 40, nullable = false)
+	@Column(name = "telefono",  length = 40, nullable = true)
 	private String telefono;
 	
-	@Column(name = "cedula",  length = 40, nullable = false)
+	@Column(name = "cedula",  length = 40, nullable = true)
 	private String cedula;
 	
-	@Column(name = "correo",  length = 40, nullable = false)
+	@Column(name = "correo",  length = 40, nullable = true)
 	private String correo;
 	
-	@Column(name = "clave",  length = 40, nullable = false)
+	@Column(name = "clave",  length = 40, nullable = true)
 	private String clave;
 	
-	@Column(name = "usuario",  length = 40, nullable = false)
+	@Column(name = "usuario",  length = 40, nullable = true)
 	private String usuario;
 	
-	@Column(name = "estado",  length = 40, nullable = false)
+	@Column(name = "estado",  length = 40, nullable = true)
 	private String estado;
 	
-
-	@Column(name = "cantidad", nullable = false)
-	private Double cantidad;
-	
-	@Column(name = "precio", nullable = false)
-	private Double precio;
-	
-	@Column(name = "puntos", nullable = false)
+	@Column(name = "puntos", nullable = true)
 	private Double puntos;
 	
-	@Column(name = "saldo", nullable = false)
+	@Column(name = "saldo", nullable = true)
 	private Double saldo;
 	
-	@Column(name = "sesion", nullable = false)
+	@Column(name = "sesion", nullable = true)
 	private Double sesion;
 	
-	@Column(name = "cupo", nullable = false)
+	@Column(name = "cupo", nullable = true)
 	private Double cupo;
 	
-	@Column(name = "cuotas", nullable = false)
+	@Column(name = "cuotas", nullable = true)
 	private Double cuotas;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "rol_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "rol_id", referencedColumnName = "id", nullable = true)
 	private RolEntity rol;
 	
-	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-	@JoinColumn(name = "ciudad_id", referencedColumnName = "id", nullable = false)
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "ciudad_id", referencedColumnName = "id", nullable = true)
 	private CiudadEntity ciudad;
 
 	public Long getId() {
@@ -90,15 +80,7 @@ public class ClienteEntity implements Serializable{
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-
-	public String getDireccion() {
-		return direccion;
-	}
-
-	public void setDireccion(String direccion) {
-		this.direccion = direccion;
-	}
-
+	
 	public String getTelefono() {
 		return telefono;
 	}
@@ -145,22 +127,6 @@ public class ClienteEntity implements Serializable{
 
 	public void setEstado(String estado) {
 		this.estado = estado;
-	}
-
-	public Double getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(Double cantidad) {
-		this.cantidad = cantidad;
-	}
-
-	public Double getPrecio() {
-		return precio;
-	}
-
-	public void setPrecio(Double precio) {
-		this.precio = precio;
 	}
 
 	public Double getPuntos() {
