@@ -4,62 +4,53 @@ import java.io.Serializable;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
 
 
-
-@Entity(name="productos")
-
+@Entity
+@Table(name="productos")
 public class ProductoEntity implements Serializable{
-
     private static final long serialVersionUID=1L;
 
     @Id
-    @Column
+    @Column(name="id_producto")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idProducto;
+    private Integer idProducto;
 
-    @Column(nullable = false, length =50)
+    @Column(name="nombre")
     private String nombre;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Double valor;
 
-    @Column(nullable = false)
-    private Long idCategoria;
-
-    @Column(nullable = false)
-    private Long idMarca;
-
-    @Column(nullable = false, length =10)
+    @Column(nullable = true, length =10)
     private String estado;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private Integer inventario;
 
-
-
-    @ManyToOne
-    @JoinColumn(name = "marca_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_marca", referencedColumnName = "id_marca", nullable = false)
     private MarcaEntity marcaModel;
 
-    @ManyToOne
-    @JoinColumn(name = "categoria_id")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id_categoria", referencedColumnName = "id_categoria", nullable = false)
     private CategoriaEntity categoriaModel;
 
-
-    public Long getIdProducto() {
+    public Integer getIdProducto() {
         return idProducto;
     }
 
-    public void setIdProducto(Long idProducto) {
+    public void setIdProducto(Integer idProducto) {
         this.idProducto = idProducto;
     }
-    
+
     public String getNombre() {
         return nombre;
     }
@@ -74,22 +65,6 @@ public class ProductoEntity implements Serializable{
 
     public void setValor(Double valor) {
         this.valor = valor;
-    }
-
-    public Long getIdCategoria() {
-        return idCategoria;
-    }
-
-    public void setIdCategoria(Long idCategoria) {
-        this.idCategoria = idCategoria;
-    }
-
-    public Long getIdMarca() {
-        return idMarca;
-    }
-
-    public void setIdMarca(Long idMarca) {
-        this.idMarca = idMarca;
     }
 
     public String getEstado() {
@@ -108,7 +83,20 @@ public class ProductoEntity implements Serializable{
         this.inventario = inventario;
     }
 
-    
-    
+    public MarcaEntity getMarcaModel() {
+        return marcaModel;
+    }
+
+    public void setMarcaModel(MarcaEntity marcaModel) {
+        this.marcaModel = marcaModel;
+    }
+
+    public CategoriaEntity getCategoriaModel() {
+        return categoriaModel;
+    }
+
+    public void setCategoriaModel(CategoriaEntity categoriaModel) {
+        this.categoriaModel = categoriaModel;
+    }    
     
 }

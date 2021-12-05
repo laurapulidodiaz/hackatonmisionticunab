@@ -11,8 +11,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 @Entity(name="direcciones")
-public class DireccionEntity implements Serializable{
-    
+public class DireccionEntity implements Serializable{    
     private static final long serialVersionUID = 1L;
 
     @Id

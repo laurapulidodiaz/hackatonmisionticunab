@@ -10,7 +10,7 @@ import javax.persistence.Id;
 
 @Entity(name="formapago")
 
-public class formaDePagoEntity implements Serializable{
+public class FormaDePagoEntity implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
