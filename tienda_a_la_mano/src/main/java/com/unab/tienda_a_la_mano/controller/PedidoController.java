@@ -65,7 +65,6 @@ public class PedidoController {
 			tabla.setDomiciliario	(entidad.getDomiciliario());
 			tabla.setEstado			(entidad.getEstado());
 			tabla.setObservacion	(entidad.getObservacion());
-			tabla.setPago_entrega	(entidad.getPago_entrega());
 			tabla.setRango_entrega	(entidad.getRango_entrega());
 			tabla.setTienda			(entidad.getTienda());
 			tabla.setTipo_entrega	(entidad.getTipo_entrega());

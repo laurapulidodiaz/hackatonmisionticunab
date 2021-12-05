@@ -48,8 +48,8 @@ public class ClienteEntity implements Serializable{
 	@Column(name = "saldo", nullable = true)
 	private Double saldo;
 	
-	@Column(name = "sesion", nullable = true)
-	private Double sesion;
+	@Column(name = "sesion",  length = 40, nullable = true)
+	private String sesion;
 	
 	@Column(name = "cupo", nullable = true)
 	private Double cupo;
@@ -145,11 +145,11 @@ public class ClienteEntity implements Serializable{
 		this.saldo = saldo;
 	}
 
-	public Double getSesion() {
+	public String getSesion() {
 		return sesion;
 	}
 
-	public void setSesion(Double sesion) {
+	public void setSesion(String sesion) {
 		this.sesion = sesion;
 	}
 

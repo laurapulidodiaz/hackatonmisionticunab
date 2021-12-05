@@ -13,64 +13,53 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.unab.tienda_a_la_mano.entity.KardexEntity;
-import com.unab.tienda_a_la_mano.service.IKardexService;
+import com.unab.tienda_a_la_mano.entity.MedioPagoEntity;
+import com.unab.tienda_a_la_mano.service.IMedioPagoService;
 
 
 @CrossOrigin(origins = "*")
 @RestController
-@RequestMapping("api/kardex")
-public class KardexController {
+@RequestMapping("api/medioPago")
+public class MedidoPagoController {
 	
 	//Accedemos a los metodos de la interface de ProductoService
 	@Autowired
-	private IKardexService service;
+	private IMedioPagoService service;
 	
 	//Con el metodo GET sin parametros consultamos todos los registros
 	@GetMapping
-	public List<KardexEntity> all(){
+	public List<MedioPagoEntity> all(){
 		return service.all();
-	}
-	
-	//Todos los productos disponibles
-	@GetMapping("/disponibles/{id}")
-	public List<KardexEntity> allProductos(@PathVariable Long id){
-		return service.allProductos(id);
 	}
 	
 	//Con el metodo GET con parametros consultamos los registros por ID
 	@GetMapping("{id}")
-	public Optional<KardexEntity> show(@PathVariable Long id){
+	public Optional<MedioPagoEntity> show(@PathVariable Long id){
 		return service.findById(id);
 	}
 	
 	//Con el metodo POST creamos los registros
 	@PostMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public KardexEntity save (@RequestBody KardexEntity KardexEntity) {
-		return service.save(KardexEntity);
+	public MedioPagoEntity save (@RequestBody MedioPagoEntity MedioPagoEntity) {
+		return service.save(MedioPagoEntity);
 	}
 	
 	//Con el metodo PUT actualizamos los registros por ID
-	@PutMapping("{id}")
+	@PutMapping
 	@ResponseStatus(code = HttpStatus.CREATED)
-	public KardexEntity update(@PathVariable Long id, @RequestBody KardexEntity kardexEntity) {
-		Optional<KardexEntity> op = service.findById(id);
+	public MedioPagoEntity update(@RequestParam("id") Long id, @RequestParam("estado") String estado) {
+		Optional<MedioPagoEntity> op = service.findById(id);
 		
-		if (!op.isEmpty()) {
-			KardexEntity kardexEntityUpdate = op.get();
-			kardexEntityUpdate.setFecha(kardexEntity.getFecha());
-			kardexEntityUpdate.setStock(kardexEntity.getStock());
-			kardexEntityUpdate.setProducto(kardexEntity.getProducto());
-			kardexEntityUpdate.setTienda(kardexEntity.getTienda());		
+			MedioPagoEntity medioPagoEntityUpdate = op.get();
+			medioPagoEntityUpdate.setEstado(estado);		
 			
-			return service.save(kardexEntityUpdate);	
-		}
-		
-		return kardexEntity;
+			return service.save(medioPagoEntityUpdate);	
+
 	}
 	
 	//Con el metodo DELETE eliminamos los registros por ID

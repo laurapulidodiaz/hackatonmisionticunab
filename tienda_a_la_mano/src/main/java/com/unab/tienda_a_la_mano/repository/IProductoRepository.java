@@ -16,7 +16,7 @@ public interface IProductoRepository extends JpaRepository<ProductoEntity, Long>
 	
 	
 	//@Query(value = "SELECT p FROM ProductoEntity p WHERE p.stock <=0")
-	@Query(value = "SELECT * FROM categorias c JOIN productos p ON p.categoria_id = c.id JOIN kardex k ON k.producto_id = p.id WHERE k.stock<=0", nativeQuery = true)
+	@Query(value = "SELECT * FROM productos p JOIN categorias c ON p.categoria_id = c.id JOIN kardex k ON k.producto_id = p.id WHERE k.stock<=0", nativeQuery = true)
 	List<ProductoEntity> allSinStock();
 	
 	
