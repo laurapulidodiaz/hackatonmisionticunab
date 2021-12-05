@@ -42,9 +42,16 @@ public class ProductoController {
 	
 	//Con el metodo GET en la ruta "/buscar?filtro=#Filtro" buscamos productos especificos
 	@GetMapping("/buscar")
-	public List<ProductoEntity> buscar(@RequestParam String filtro){
-		return service.buscar(filtro);
+	public List<ProductoEntity> allByNombreOMarca(@RequestParam String filtro){
+		return service.allByNombreOMarca(filtro);
 	}
+	
+	//Con el metodo GET en la ruta /sinStock listamos los productos sin stock
+	@GetMapping("/sinStock")
+	public List<ProductoEntity> allSinStock(){
+		return service.allSinStock();
+	}
+	
 	
 	//Con el metodo GET con parametros consultamos los registros por ID
 	@GetMapping("{id}")
@@ -59,6 +66,27 @@ public class ProductoController {
 		return service.save(ProductoEntity);
 	}
 	
+	@PutMapping("/cantMin")
+	public ResponseEntity<?> updateCantidadMinima(@RequestParam("id_producto") Long id, @RequestParam("cantidad") Double cant_min) {
+		Map<String, Object> respuesta = new HashMap<>();
+		try {
+			Optional<ProductoEntity> op = service.findById(id);
+			
+			if (!op.isEmpty()) {
+				ProductoEntity productoEntityUpdate = op.get();
+				productoEntityUpdate.setCant_min(cant_min);
+				service.save(productoEntityUpdate);	
+			}
+		} catch (DataAccessException e) {
+			respuesta.put("ERROR", "Producto no encontrado");
+			return new ResponseEntity<Map<String, Object>>(respuesta, HttpStatus.NOT_FOUND);
+		}
+		respuesta.put("Excelente", "Se asignó la cantidad minima al producto");
+		return new ResponseEntity<Map<String, Object>>(respuesta, HttpStatus.OK);
+		
+	
+	}
+	
 	//Con el metodo PUT actualizamos los registros por ID
 	@PutMapping("{id}")
 	@ResponseStatus(code = HttpStatus.CREATED)
@@ -71,7 +99,6 @@ public class ProductoController {
 			productoEntityUpdate.setPrecio(productoEntity.getPrecio());
 			productoEntityUpdate.setCant_min(productoEntity.getCant_min());
 			productoEntityUpdate.setPuntos(productoEntity.getPuntos());
-			productoEntityUpdate.setStock(productoEntity.getStock());
 			productoEntityUpdate.setCategoria(productoEntity.getCategoria());
 			productoEntityUpdate.setMarca(productoEntity.getMarca());
 			
@@ -84,7 +111,7 @@ public class ProductoController {
 	//Con el metodo DELETE eliminamos los registros por ID
 	@DeleteMapping("{id}")
 	//@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	public ResponseEntity<?> delete(@PathVariable Long id) {
+	public ResponseEntity<?> delete(@PathVariable("id") Long id) {
 		Map<String, Object> respuesta = new HashMap<>();
 		try {
 			service.deleteById(id);

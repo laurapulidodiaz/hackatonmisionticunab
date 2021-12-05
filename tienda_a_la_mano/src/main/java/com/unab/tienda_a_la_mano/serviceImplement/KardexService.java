@@ -37,4 +37,9 @@ public class KardexService implements IKardexService{
 		
 	}
 
+	@Override
+	public List<KardexEntity> allProductos() {
+		return this.repository.allProductos();
+	}
+
 }

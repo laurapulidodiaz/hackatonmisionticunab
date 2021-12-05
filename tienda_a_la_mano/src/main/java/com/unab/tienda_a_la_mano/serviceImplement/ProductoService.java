@@ -22,8 +22,8 @@ public class ProductoService implements IProductoService{
 	}
 	
 	@Override
-	public List<ProductoEntity> buscar(String filtro) {
-		return this.repository.buscar(filtro);
+	public List<ProductoEntity> allByNombreOMarca(String filtro) {
+		return this.repository.allByNombreOMarca(filtro);
 	}
 
 	@Override
@@ -42,5 +42,11 @@ public class ProductoService implements IProductoService{
 		this.repository.deleteById(id);
 		
 	}
+
+	@Override
+	public List<ProductoEntity> allSinStock() {
+		return this.repository.allSinStock();
+	}
+
 
 }

@@ -37,9 +37,6 @@ public class ProductoEntity implements Serializable{
 	@Column(name = "puntos", nullable = true)
 	private Double puntos;
 	
-	@Column(name = "stock", nullable = true)
-	private Double stock;
-	
 	@ManyToOne(fetch = FetchType.EAGER )
 	@JoinColumn(name = "categoria_id", referencedColumnName = "id", nullable = true)
 	private CategoriaEntity categoria;
@@ -96,14 +93,6 @@ public class ProductoEntity implements Serializable{
 
 	public void setPuntos(Double puntos) {
 		this.puntos = puntos;
-	}
-
-	public Double getStock() {
-		return stock;
-	}
-
-	public void setStock(Double stock) {
-		this.stock = stock;
 	}
 
 	public CategoriaEntity getCategoria() {

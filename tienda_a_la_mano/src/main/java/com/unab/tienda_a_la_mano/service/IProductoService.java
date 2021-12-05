@@ -15,7 +15,10 @@ public interface IProductoService {
 	public Optional<ProductoEntity> findById(Long id);
 	
 	//Listar por Por nombre o marca
-	public List<ProductoEntity> buscar(String filtro);
+	public List<ProductoEntity> allByNombreOMarca(String filtro);
+	
+	//Listar los que no tengan stock
+	List<ProductoEntity> allSinStock();
 	
 	//Guardar-actualizar
 	public ProductoEntity save(ProductoEntity productoEntity);	
