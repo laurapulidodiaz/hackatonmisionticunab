@@ -21,15 +21,14 @@ public class Producto {
     private int Precio;
     private String CantidadStrock;
     private String Categoria;
-    private int Impuesto;
+    private double Impuesto;
 
 
     public Producto() {
     }
 
 
-    public Producto(Long idProducto, String Nombre, int Precio, String CantidadStrock, String Categoria, int Impuesto) {
-        this.idProducto = idProducto;
+    public Producto(String Nombre, int Precio, String CantidadStrock, String Categoria, int Impuesto) {
         this.Nombre = Nombre;
         this.Precio = Precio;
         this.CantidadStrock = CantidadStrock;
@@ -78,17 +77,15 @@ public class Producto {
         this.Categoria = categoria;
     }
 
-    public int getImpuesto() {
+    public double getImpuesto() {
         return Impuesto;
     }
 
-    public void setImpuesto(int impuesto) {
+    public void setImpuesto(double impuesto) {
         this.Impuesto = impuesto;
     }
 
 
-    public Long getId() {
-        return null;
-    }
+    
 
 }

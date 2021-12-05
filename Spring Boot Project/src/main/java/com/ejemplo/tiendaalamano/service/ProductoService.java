@@ -8,7 +8,7 @@ public interface ProductoService {
     
     //Métodos
     void deleteAllProducto();
-    void deleteProductoById(Long idProducto);
+    void deleteProductoById(Long id);
     void createProducto (Producto producto);
     Producto getProductoById(Long idProducto);
 

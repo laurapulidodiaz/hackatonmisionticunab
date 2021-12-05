@@ -24,18 +24,18 @@ public class ProductoServiceImpl implements ProductoService{
     }
 
     @Override
-    public void deleteProductoById(Long idProducto) {
-        productoRepository.deleteById(idProducto);
+    public void deleteProductoById(Long id) {
+        productoRepository.deleteById(id);
         
     }
 
     @Override
     public void createProducto(Producto producto) {
-        Optional<Producto> existingProducto = productoRepository.findById(producto.getId());
+        /* Optional<Producto> existingProducto = productoRepository.findById(producto.getIdProducto());
         
         if (!existingProducto.isPresent()) {
             throw new BadResourceRequestException("Hay un Producto con el mismo nombre.");
-        }
+        } */
 
         productoRepository.save(producto);
     }

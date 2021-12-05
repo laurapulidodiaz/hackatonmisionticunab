@@ -31,11 +31,11 @@ public class PedidoServiceImpl implements PedidoService {
 
     @Override
     public void createPedido(Pedido pedido) {
-        Optional<Pedido> existingPedido = pedidoRepository.findById(pedido.getIdPedido());
+        //Optional<Pedido> existingPedido = pedidoRepository.findById(pedido.getIdPedido());
 
-        if (existingPedido.isPresent()) {
-            throw new BadResourceRequestException("El pedido con este id ya existe. ");
-        }
+        //if (existingPedido.isPresent()) {
+          //  throw new BadResourceRequestException("El pedido con este id ya existe. ");
+        //}
 
         pedidoRepository.save(pedido);
     }

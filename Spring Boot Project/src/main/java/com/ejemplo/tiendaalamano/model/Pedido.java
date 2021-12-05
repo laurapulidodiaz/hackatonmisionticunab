@@ -9,11 +9,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Pedido implements Serializable {
+public class Pedido {
     
     @Id
     @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(unique = true, nullable = false)
+    @Column(unique = true, nullable = true)
     private Long idPedido;
     private double valorTotalCompra;
     private String estado;
@@ -30,9 +30,6 @@ public class Pedido implements Serializable {
         return idPedido;
     }
 
-    public void setIdPedido(Long idPedido) {
-        this.idPedido = idPedido;
-    }
 
 
     public double getValorTotalCompra() {
