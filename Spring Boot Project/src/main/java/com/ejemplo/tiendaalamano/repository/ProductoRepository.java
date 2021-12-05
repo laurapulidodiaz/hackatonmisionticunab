@@ -19,6 +19,9 @@ public interface ProductoRepository extends JpaRepository<ProductoEntity, Intege
     @Query("SELECT c FROM ProductoEntity c WHERE c.categoriaModel.id_categoria=:codigo")
     public ProductoEntity consultaEstadoCate(Integer codigo);
 
+    @Query("SELECT c FROM ProductoEntity c WHERE c.inventario=:codigo")
+    public ProductoEntity sinExistencias(Integer codigo);
+
     @Query("DELETE FROM ProductoEntity c WHERE c.id_producto=:codigo")
     public Void borrarOne(Integer codigo);
 

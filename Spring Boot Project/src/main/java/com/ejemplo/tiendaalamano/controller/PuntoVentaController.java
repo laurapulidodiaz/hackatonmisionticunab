@@ -32,6 +32,12 @@ public class PuntoVentaController {
         return puntoVentaServicio.unPuntoVenta(codigo);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/ubicacion/{ciudad}", method = RequestMethod.GET)
+    public PuntoVentaEntity ubicacionPunto(@PathVariable String ciudad){
+        return puntoVentaServicio.ubicacionPunto(ciudad);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/nuevo", method = RequestMethod.POST, consumes = "application/json")
     public void nuevoPuntoVenta(@RequestBody PuntoVentaEntity miObjetito){

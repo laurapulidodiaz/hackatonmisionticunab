@@ -38,7 +38,7 @@ public class OrdenCompra implements Serializable{
     private Long idFormaPago;
 
     @Column(nullable = true)
-    private Long idPuntoVenta;
+    private Long id_PuntoDeVenta;
 
     @Column(nullable = true)
     private Double subtotal;

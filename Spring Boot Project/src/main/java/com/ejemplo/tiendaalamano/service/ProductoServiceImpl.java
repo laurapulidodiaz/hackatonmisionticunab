@@ -28,6 +28,10 @@ public class ProductoServiceImpl {
         return productoRepo.consultaEstadoCate(codigo);
     }
 
+    public ProductoEntity existenciaVacia(Integer codigo){
+        return productoRepo.sinExistencias(codigo);
+    }
+
     public void crearProducto(ProductoEntity miObjeto){
         productoRepo.save(miObjeto);
     }

@@ -36,7 +36,6 @@ public class TiendaALaManoApplication {
 			configuration.setAllowedMethods(Arrays.asList("GET", "POST", "HEAD", "PUT", "DELETE"));
 			configuration.setAllowCredentials(true);
 			configuration.setExposedHeaders(Arrays.asList("Authorization"));
-
 			http.addFilterAfter(new JWTAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class)
 					.authorizeRequests().antMatchers(HttpMethod.GET, "/api/auth").permitAll().anyRequest()
 					.authenticated()

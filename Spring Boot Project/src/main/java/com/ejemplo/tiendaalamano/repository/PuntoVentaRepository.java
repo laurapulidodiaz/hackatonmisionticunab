@@ -17,4 +17,7 @@ public interface PuntoVentaRepository extends JpaRepository<PuntoVentaEntity, In
 
     @Query("DELETE FROM PuntoVentaEntity c WHERE c.id_PuntoDeVenta=:codigo")
     public Void borrarOne(Integer codigo);
+
+    @Query("SELECT c FROM PuntoVentaEntity c WHERE c.ubicacion=:ciudad")
+    public PuntoVentaEntity ubicacionCiudad(String ciudad);
 }

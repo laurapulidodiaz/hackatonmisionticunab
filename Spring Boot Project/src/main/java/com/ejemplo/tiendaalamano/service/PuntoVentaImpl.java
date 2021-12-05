@@ -24,6 +24,10 @@ public class PuntoVentaImpl {
         return puntoVentaRepo.consultaOne(codigo);
     }
 
+    public PuntoVentaEntity ubicacionPunto(String ciudad){
+        return puntoVentaRepo.ubicacionCiudad(ciudad);
+    }
+
     public void crearPuntoVenta(PuntoVentaEntity miObjeto){
         puntoVentaRepo.save(miObjeto);
     }

@@ -22,6 +22,12 @@ public class PuntoVentaEntity implements Serializable{
     @Column(name="nombrePuntoDeVenta")
     private String nombrePuntoDeVenta;
 
+    @Column(name="ubicacion")
+    private String ubicacion;
+
+    @Column(name="ciudad")
+    private String ciudad;
+
     public Integer getId_PuntoDeVenta() {
         return id_PuntoDeVenta;
     }
@@ -37,4 +43,22 @@ public class PuntoVentaEntity implements Serializable{
     public void setNombrePuntoDeVenta(String nombrePuntoDeVenta) {
         this.nombrePuntoDeVenta = nombrePuntoDeVenta;
     }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    
 }

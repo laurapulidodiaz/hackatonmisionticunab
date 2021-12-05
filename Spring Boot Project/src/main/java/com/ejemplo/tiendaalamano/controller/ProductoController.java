@@ -38,6 +38,12 @@ public class ProductoController {
         return productoServicio.estadoCate(codigo);
     }
 
+    @ResponseStatus(HttpStatus.OK)
+    @RequestMapping(value = "/sinexistencias/{codigo}", method = RequestMethod.GET)
+    public ProductoEntity sinExistencias(@PathVariable Integer codigo){
+        return productoServicio.existenciaVacia(codigo);
+    }
+
     @ResponseStatus(HttpStatus.CREATED)
     @RequestMapping(value = "/nuevo", method = RequestMethod.POST, consumes = "application/json")
     public void nuevoProducto(@RequestBody ProductoEntity miObjetito){
