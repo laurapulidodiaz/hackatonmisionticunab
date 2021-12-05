@@ -17,7 +17,7 @@ public class CategoriaEntity implements Serializable {
     @Id
     @Column(name="id_categoria")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idCategoria;
+    private Integer id_categoria;
 
     @Column(name="nombre")
     private String nombre;
@@ -28,12 +28,12 @@ public class CategoriaEntity implements Serializable {
     //@OneToMany(cascade = CascadeType.ALL, mappedBy = "categoriaModel")
     //private List<ProductoEntity> productoModelList = new ArrayList<>();
 
-    public Integer getIdCategoria() {
-        return idCategoria;
+    public Integer getid_categoria() {
+        return id_categoria;
     }
 
-    public void setIdCategoria(Integer idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setid_categoria(Integer id_categoria) {
+        this.id_categoria = id_categoria;
     }
 
     public String getNombre() {

@@ -44,9 +44,9 @@ public class CategoriaController {
         categoServicio.borrarCategoria(codigo);
     }
 
-    /*@ResponseStatus(HttpStatus.OK)
-    @RequestMapping(value = "/actualizar", method = RequestMethod.PATCH, produces = "application/json")
-    public void actualizarCate(@RequestBody CategoriaEntity miObjeto, @PathVariable Integer codigo){
-        categoServicio.actualizarCategoria(miObjeto, miObjeto.getIdCategoria());
-    }*/
+    @ResponseStatus(code = HttpStatus.OK, reason = "Objeto categoria cambiado")
+    @RequestMapping(value = "/actualizar", method = RequestMethod.PUT)
+    public void actualizarCate(@RequestBody CategoriaEntity miObjeto){
+        categoServicio.actualizarCategoria(miObjeto);
+    }
 }
