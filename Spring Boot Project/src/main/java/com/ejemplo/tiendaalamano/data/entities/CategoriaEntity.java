@@ -12,7 +12,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 //import javax.persistence.OneToMany;
 import javax.persistence.Table;
-import javax.persistence.Index;
 
 
 @Entity
@@ -58,7 +57,4 @@ public class CategoriaEntity implements Serializable {
     public void setEstado(String estado) {
         this.estado = estado;
     }
-
-    
-    
 }
