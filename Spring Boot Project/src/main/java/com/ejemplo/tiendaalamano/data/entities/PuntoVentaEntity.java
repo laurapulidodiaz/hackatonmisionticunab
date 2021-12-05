@@ -7,26 +7,27 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
-@Entity(name="puntoventa")
-
-public class PuntoVenta implements Serializable{
+@Entity
+@Table(name="puntoventa")
+public class PuntoVentaEntity implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
-    @Column
+    @Column(name="id_PuntoDeVenta")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idpuntoDeVenta;
+    private Integer id_PuntoDeVenta;
 
-    @Column(nullable = false)
+    @Column(name="nombrePuntoDeVenta")
     private String nombrePuntoDeVenta;
 
-    public long getIdpuntoDeVenta() {
-        return idpuntoDeVenta;
+    public Integer getId_PuntoDeVenta() {
+        return id_PuntoDeVenta;
     }
 
-    public void setIdpuntoDeVenta(long idpuntoDeVenta) {
-        this.idpuntoDeVenta = idpuntoDeVenta;
+    public void setId_PuntoDeVenta(Integer id_PuntoDeVenta) {
+        this.id_PuntoDeVenta = id_PuntoDeVenta;
     }
 
     public String getNombrePuntoDeVenta() {
@@ -36,5 +37,4 @@ public class PuntoVenta implements Serializable{
     public void setNombrePuntoDeVenta(String nombrePuntoDeVenta) {
         this.nombrePuntoDeVenta = nombrePuntoDeVenta;
     }
-    
 }

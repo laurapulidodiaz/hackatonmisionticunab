@@ -21,18 +21,18 @@ public class ProductoEntity implements Serializable{
     @Id
     @Column(name="id_producto")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idProducto;
+    private Integer id_producto;
 
     @Column(name="nombre")
     private String nombre;
 
-    @Column(nullable = true)
+    @Column(name="valor")
     private Double valor;
 
-    @Column(nullable = true, length =10)
+    @Column(name="estado")
     private String estado;
 
-    @Column(nullable = true)
+    @Column(name="inventario")
     private Integer inventario;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -43,12 +43,13 @@ public class ProductoEntity implements Serializable{
     @JoinColumn(name = "id_categoria", referencedColumnName = "id_categoria", nullable = false)
     private CategoriaEntity categoriaModel;
 
-    public Integer getIdProducto() {
-        return idProducto;
+
+    public Integer getId_producto() {
+        return id_producto;
     }
 
-    public void setIdProducto(Integer idProducto) {
-        this.idProducto = idProducto;
+    public void setId_producto(Integer id_producto) {
+        this.id_producto = id_producto;
     }
 
     public String getNombre() {

@@ -17,7 +17,7 @@ public class MarcaEntity implements Serializable{
     @Id
     @Column(name="id_marca")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idMarca;
+    private Integer id_marca;
 
     @Column(nullable = true, length = 50)
     private String nombre;
@@ -29,12 +29,12 @@ public class MarcaEntity implements Serializable{
     //private List<ProductoEntity> productoModelList = new ArrayList<>();
     
 
-    public Integer getIdMarca() {
-        return idMarca;
+    public Integer getid_marca() {
+        return id_marca;
     }
 
-    public void setIdMarca(Integer idMarca) {
-        this.idMarca = idMarca;
+    public void setid_marca(Integer id_marca) {
+        this.id_marca = id_marca;
     }
 
     public String getNombre() {
