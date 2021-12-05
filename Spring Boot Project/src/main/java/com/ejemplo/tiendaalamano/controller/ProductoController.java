@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductoController {
     @GetMapping
     public String hola(){
-        return "hola soy didier";
+        return "hola soy mario";
     }
 }
